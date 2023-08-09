@@ -1,4 +1,4 @@
-<img src="Exercicios/img/origamid-logo.png" width="50%">
+<img src="curso/src/img/origamid-logo.png" width="50%">
 <h2>TypeScript para Iniciantes</h2>
 
 <p>Neste curso você irá aprender a como utilizar o TypeScript do zero.</p>
@@ -77,7 +77,6 @@
 <hr>
 
 <h3>Status do Deploy</h3>
-<img src=""></img>
 
 <hr>
 
