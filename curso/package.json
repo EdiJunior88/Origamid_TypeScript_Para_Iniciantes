@@ -11,9 +11,5 @@
   "devDependencies": {
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "@microsoft/eslint-formatter-sarif": "^2.1.7",
-    "eslint": "^8.10.0"
   }
 }
