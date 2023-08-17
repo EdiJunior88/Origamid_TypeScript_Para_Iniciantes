@@ -1,29 +1,32 @@
-let produto = "Livro";
-let preco = 200;
+// function normalizarTexto(texto: string) {
+//   return texto.trim().toLowerCase();
+// }
 
-const carro = {
-  marca: "Audi",
-  portas: 5,
-};
+// console.log(normalizarTexto(' DEsigN '));
 
-const barato = 200 < 400 ? true : "produto caro";
+const input = document.querySelector("input");
 
-function somar(a: number, b: number) {
-  return a + b;
+const total = localStorage.getItem("total");
+
+if (input && total) {
+  input.value = total;
+  calcularGanho(Number(input.value));
 }
 
-somar(4, 10);
-// somar (4, "10")
-
-const Nintendo = {
-  nome: "Nintendo",
-  preco: "2000",
-};
-
-function transformarPreco(produto: { nome: string; preco: string }) {
-  produto.preco = "R$ " + produto.preco;
-  return produto
+function calcularGanho(value: number) {
+  const p = document.querySelector("p");
+  if (p) {
+    p.innerText = `ganho total: ${value + 100 - value * 0.2}`;
+  }
 }
 
-const produtoNovo = transformarPreco(Nintendo)
-console.log(produtoNovo);
+function totalMudou() {
+  if (input) {
+    localStorage.setItem("total", input.value);
+    calcularGanho(Number(input.value));
+  }
+}
+
+if (input) {
+  input.addEventListener("keyup", totalMudou);
+}
