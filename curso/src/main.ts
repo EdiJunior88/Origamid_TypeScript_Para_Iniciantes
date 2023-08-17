@@ -1,21 +1,18 @@
-// const frase = "Front End";
-// const preco = 500;
-// const condi = preco > 100;
+let total: string | number = 200;
+total = "4000";
 
-// console.log(typeof frase);
-// console.log(typeof preco);
-// console.log(typeof null);
+function isNumber(value: string | number) {
+  if (typeof value === "number") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-// if (typeof frase === "string") {
-//   console.log("Frase é uma string");
-// } else {
-//   console.log("Frase NÃO É uma string");
-// }
+if (isNumber("200")) {
+  console.log("É um numero");
+}
 
-const frase1 = new String('Front End');
-const frase2 = String('Front End');
-const frase3 = 'Front End';
+const button = document.querySelector("button");
 
-console.log(typeof frase1);
-console.log(typeof frase2);
-console.log(typeof frase3);
+button?.click();
