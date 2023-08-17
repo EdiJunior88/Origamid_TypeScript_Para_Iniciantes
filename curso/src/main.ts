@@ -1,32 +1,21 @@
-// function normalizarTexto(texto: string) {
-//   return texto.trim().toLowerCase();
+// const frase = "Front End";
+// const preco = 500;
+// const condi = preco > 100;
+
+// console.log(typeof frase);
+// console.log(typeof preco);
+// console.log(typeof null);
+
+// if (typeof frase === "string") {
+//   console.log("Frase é uma string");
+// } else {
+//   console.log("Frase NÃO É uma string");
 // }
 
-// console.log(normalizarTexto(' DEsigN '));
+const frase1 = new String('Front End');
+const frase2 = String('Front End');
+const frase3 = 'Front End';
 
-const input = document.querySelector("input");
-
-const total = localStorage.getItem("total");
-
-if (input && total) {
-  input.value = total;
-  calcularGanho(Number(input.value));
-}
-
-function calcularGanho(value: number) {
-  const p = document.querySelector("p");
-  if (p) {
-    p.innerText = `ganho total: ${value + 100 - value * 0.2}`;
-  }
-}
-
-function totalMudou() {
-  if (input) {
-    localStorage.setItem("total", input.value);
-    calcularGanho(Number(input.value));
-  }
-}
-
-if (input) {
-  input.addEventListener("keyup", totalMudou);
-}
+console.log(typeof frase1);
+console.log(typeof frase2);
+console.log(typeof frase3);
