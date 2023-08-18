@@ -1,38 +1,42 @@
-function normalizar(texto: string) {
-  return texto.trim().toLowerCase();
+const button = document.querySelector("button");
+const config = localStorage.getItem("config");
+
+if (button !== null) {
+  button.click();
 }
 
-console.log(normalizar(" DeSigN "));
-// console.log(normalizar(200));
-
-async function fetchJSON(url: string) {
-  const response = await fetch(url);
-  const data = await response.json();
-  manipularData(data);
+if (button) {
+  button.click();
 }
 
-fetchJSON("https://api.origamid.dev/json/cursos.json");
+console.log(typeof null);
 
-function manipularData(data: { nome: string }) {
-  console.log(data.nome);
+button?.click();
+
+let total;
+
+function teste() {}
+
+// console.log(typeof total);
+
+// if (total) {
+//   console.log("Total foi definido");
+// } else {
+//   console.log("Total não foi definido");
+// }
+
+interface Product {
+  nome?: string;
 }
 
-interface Curso {
-  nome: string;
-  horas: number;
+const jogo: Product = {
+  nome: "Ragnarok",
+};
+
+const livro: Product = {};
+
+if (jogo.nome) {
+  jogo.nome.toLowerCase();
 }
 
-function mostrarCursos(cursos: Curso[]) {
-  cursos.forEach((curso) => {
-    document.body.innerHTML += `
-      <div>
-        <h2>${curso.nome}</h2>
-        <p>Horas: ${curso.horas}</p>
-      </div>
-    `;
-  });
-}
-
-const dados: any = 'o any gera problemas'
-
-mostrarCursos(dados);
+livro.nome?.toLowerCase();
