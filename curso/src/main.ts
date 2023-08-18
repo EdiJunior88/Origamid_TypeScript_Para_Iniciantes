@@ -1,42 +1,38 @@
-// Defina a interface da API: https://api.origamid.dev/json/cursos.json e mostre os dados na tela.
+function normalizar(texto: string) {
+  return texto.trim().toLowerCase();
+}
 
-// Existem apenas dois níveis de cursos, Iniciante (iniciante) e Avançado (avancado). Se for para iniciante pinte o título de azul, para avançado pinte de vermelho.
+console.log(normalizar(" DeSigN "));
+// console.log(normalizar(200));
+
+async function fetchJSON(url: string) {
+  const response = await fetch(url);
+  const data = await response.json();
+  manipularData(data);
+}
+
+fetchJSON("https://api.origamid.dev/json/cursos.json");
+
+function manipularData(data: { nome: string }) {
+  console.log(data.nome);
+}
 
 interface Curso {
   nome: string;
   horas: number;
-  aulas: string;
-  gratuito: boolean;
-  tags: string[];
-  idAulas: number[];
-  nivel: "iniciante" | "avancado";
 }
-
-async function fetchCursos() {
-  const response = await fetch("https://api.origamid.dev/json/cursos.json");
-  const data = await response.json();
-  mostrarCursos(data);
-}
-
-fetchCursos();
 
 function mostrarCursos(cursos: Curso[]) {
   cursos.forEach((curso) => {
-    let color;
-    if (curso.nivel === "iniciante") {
-      color = "blue";
-    } else if (curso.nivel === "avancado") {
-      color = "red";
-    }
     document.body.innerHTML += `
       <div>
-        <h2 style="color: ${color};">${curso.nome}</h2>
+        <h2>${curso.nome}</h2>
         <p>Horas: ${curso.horas}</p>
-        <p>Aulas: ${curso.aulas}</p>
-        <p>Tipo: ${curso.gratuito ? "Gratuito" : "Pago"}</p>
-        <p>Tags: ${curso.tags.join(", ")}</p>
-        <p>Aulas: ${curso.idAulas.join(" | ")}</p>
       </div>
     `;
   });
 }
+
+const dados: any = 'o any gera problemas'
+
+mostrarCursos(dados);
