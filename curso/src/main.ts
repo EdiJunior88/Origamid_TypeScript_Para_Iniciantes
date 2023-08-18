@@ -1,47 +1,40 @@
-type NumberOrString = string | number;
+// Defina a interface da API: https://api.origamid.dev/json/notebook.json e mostre os dados na tela.
 
-let total: NumberOrString = 20;
-total = "30";
-
-interface InterfaceProduto {
+interface Empresa {
   nome: string;
-  preco: number;
-  teclado: boolean;
+  fundacao: number;
+  pais: string;
 }
 
-type TypeProduto = {
+interface Product {
   nome: string;
   preco: number;
-  teclado: boolean;
-};
+  descricao: string;
+  garantia: string;
+  seguroAcidentes: boolean;
+  empresaFabricante: Empresa;
+  empresaMontadora: Empresa;
+}
 
-function preencherDados(dados: InterfaceProduto) {
-  document.body.innerHTML += `
+async function fetchProduct() {
+  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  const data = await response.json();
+  showProduct(data);
+}
+
+fetchProduct();
+
+function showProduct(data: Product) {
+  document.body.innerHTML = `
     <div>
-      <h2>${dados.nome}</h2>
-      <p>R$ ${dados.preco}</p>
-      <p>Inclui teclado: ${dados.teclado ? "sim" : "não"}</p>
+      <h2>${data.nome}</h2>
+      <p>R$ ${data.preco}</p>
+      <div>
+        <h3>Fabricante: ${data.empresaFabricante.nome}</h3>
+      </div>
+      <div>
+        <h3>Montadora: ${data.empresaMontadora.nome}</h3>
+      </div>
     </div>
   `;
 }
-
-const computador: TypeProduto = {
-  nome: "Computador",
-  preco: 2000,
-  teclado: true,
-};
-
-preencherDados(computador);
-preencherDados({ nome: "Notebook", preco: 2500, teclado: false });
-
-type Categorias = "design" | "codigo" | "descod";
-
-function pintarCategoria(categoria: Categorias) {
-  console.log(categoria);
-
-  if (categoria === "design") {
-    console.log("Pintar vermelho");
-  }
-}
-
-pintarCategoria("design");
