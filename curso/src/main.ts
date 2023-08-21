@@ -1,42 +1,54 @@
-const button = document.querySelector("button");
-const config = localStorage.getItem("config");
+class Produto {
+  nome: string;
+  preco: number;
 
-if (button !== null) {
-  button.click();
+  constructor(nome: string, preco: number) {
+    this.nome = nome;
+    this.preco = preco;
+  }
+  precoReal() {
+    return `R$ ${this.preco}`;
+  }
 }
 
-if (button) {
-  button.click();
+const livro = new Produto("A guerra dos tronos", 200);
+
+console.log(livro instanceof Produto);
+
+class Livro {
+  autor: string;
+
+  constructor(autor: string) {
+    this.autor = autor;
+  }
 }
 
-console.log(typeof null);
+class Jogo {
+  jogadores: number;
 
-button?.click();
-
-let total;
-
-function teste() {}
-
-// console.log(typeof total);
-
-// if (total) {
-//   console.log("Total foi definido");
-// } else {
-//   console.log("Total não foi definido");
-// }
-
-interface Product {
-  nome?: string;
+  constructor(jogadores: number) {
+    this.jogadores = jogadores;
+  }
 }
 
-const jogo: Product = {
-  nome: "Ragnarok",
-};
+function buscarProduto(busca: string) {
+  if (busca === "O Hobbit") {
+    return new Livro("J.R.R. Tolkien");
+  }
 
-const livro: Product = {};
+  if (busca === "Dark Souls") {
+    return new Jogo(1);
+  }
 
-if (jogo.nome) {
-  jogo.nome.toLowerCase();
+  return null;
 }
 
-livro.nome?.toLowerCase();
+const produto = buscarProduto("Dark Souls");
+
+if (produto instanceof Livro) {
+  console.log(produto.autor);
+}
+
+if (produto instanceof Jogo) {
+  console.log(produto.jogadores);
+}
