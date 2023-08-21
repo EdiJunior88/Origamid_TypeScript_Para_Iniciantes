@@ -1,9 +1,5 @@
-// 1 - Selecione o link utilizando o método getElementById.
+const video = document.querySelector("#videoprincipal");
 
-// 2 - Substitua o href do link (HTMLAnchorElement) de http:// para https://.const link = document.getElementById('origamid');
-
-const link = document.getElementById("origamid");
-
-if (link instanceof HTMLAnchorElement) {
-  link.href = link.href.replace("http://", "https://");
+if (video instanceof HTMLVideoElement) {
+  console.log(video.volume);
 }
