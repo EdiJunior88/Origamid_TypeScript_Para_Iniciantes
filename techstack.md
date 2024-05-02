@@ -28,7 +28,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [EdiJunior88/Origamid_TypeScript_Para_Iniciantes](https://github.com/EdiJunior88/Origamid_TypeScript_Para_Iniciantes)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|6<br/>Tools used|02/04/24 <br/>Report generated|
+|6<br/>Tools used|05/02/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -89,7 +89,7 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[vite](https://www.npmjs.com/vite)|v5.0.12|01/21/24|renovate[bot] |N/A|N/A|
+|[vite](https://www.npmjs.com/vite)|v5.0.13|04/03/24|dependabot[bot] |N/A|N/A|
 
 <br/>
 <div align='center'>
